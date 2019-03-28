@@ -36,7 +36,7 @@ ul a:hover {
     margin-left: 13%;
 }
 
- ul {
+ul {
     list-style-type: none;
     width: 50%;
     display: flex;
@@ -49,28 +49,30 @@ ul a:hover {
     margin-top: 3.3%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     #main {
     margin-top: 40px;
-    }
+    } 
 }
+
 #form {
-    display: inline;
-    width: 80%;
+    width: 60%;
     font-weight: bold;
     color: white;
 }
-input [type="email"]{
-    height: 120%;
-    width: 3vw;
+#email {
+    font-size: 80%;
+    height: 2vmax;
+    width: 60%;
     border: 2px solid white;
     border-radius: 2px;
     padding: 1px;
 }
 #submit { 
+  font-size: 80%;
   margin: 5%;
-  height: 15%;
-  width: 10%;
+  height: 3vmax;
+  width: 10vmax;
   color: white;
   font-weight: bold;
   border: none;
@@ -100,12 +102,12 @@ input [type="email"]{
 }
 #slogan {
     font-family: Calibri;
-    font-size: 3em;
+    font-size: 3vw;
     color: #f9f9f9;
     text-shadow: 1px 0px 10px black;
 }
 #front {
-    background-image: url(images/leaf.png);
+    background-image: url("images/leaf.png");
     background-size: 100% 100%;
     font-weight: bold;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -116,30 +118,27 @@ input [type="email"]{
 }
 #donation-img {
     position: absolute;
-    left: 47.5%;
+    margin: 0 auto;
 }
 
 #payment {
-    flex-direction: row;
-    align-content: flex-start;
-    align-items: flex-start;
-    
+    flex-direction: column;
+    align-content: center;
+    align-items: center; 
+    height: auto;
 }
 .pers-box {
-    margin-top: 10%; 
-    perspective: 500px;
+    margin-top: 1em; 
+    perspective: 30em;
+    padding-top: 10%;
 }
 .pay-option {
-
     display: grid;
     grid-template-rows: 100px 100px 200px;
-    justify-content: flex-start;
+    justify-content: start;
     justify-items: center;
     margin: 0 auto;
-    height: 400px; width: 300px;
-
-    transform-style: preserve-3d;
-    transform: rotateX(45deg);
+    height: 25em; width: 100%;
 
     overflow: hidden;
     border-radius: 3px;
@@ -148,6 +147,22 @@ input [type="email"]{
     background-color: white;
 
 }
+@media (min-width: 1200px) {
+
+#payment {
+    flex-direction: row;
+    align-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    height: 70%;    
+}
+
+.pay-option {
+    transform-style: preserve-3d;
+    transform: rotateX(45deg);
+    height: 20vw;
+    width: 15vw;
+}
 
 .pay-option:hover {
     animation-name: action-view;
@@ -155,7 +170,6 @@ input [type="email"]{
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    z-index: 12;
 }
 
 @keyframes action-view{
@@ -165,10 +179,14 @@ input [type="email"]{
 
     100% {
         transform: rotateX(0deg);
-        transform: scale(1.2, 1.2);
+        transform: scale(1.3, 1.3);
     }
   }
 
+  footer {
+    color: black;
+  }
+}
 .pay-option h3 {
     display: block;
     width: 100%;
@@ -180,6 +198,7 @@ input [type="email"]{
 }
 
 .pay-option p {
+    font-size: 1em;
     text-align: justify;
     padding: 10%;
     z-index: 2;
@@ -198,9 +217,10 @@ footer ul li{
     filter: grayscale(0%);
 }
 footer {
+    text-align: justify;
     display: flex;
     align-items: flex-start;
-    align-content: flex-start;
+    align-content: center;
     justify-content: center;
     padding: 2%;
     background-color: #f9f9f9;
